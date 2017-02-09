@@ -1,0 +1,269 @@
+/*
+1. 垂直对齐:CSS3变换来解决这个问题;
+*/
+.vc{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*
+ 2. 只在一侧或者两侧具有投影
+*/
+.box-shadow {
+    background-color: #AC92EC;
+    width: 160px;
+    height: 90px;
+    margin-top: -45px;
+    margin-left: -80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.box-shadow:after {
+    content: "";
+    width: 150px;
+    height: 1px;
+    margin-top: 88px;
+    margin-left: -75px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    -webkit-box-shadow: 0px 0px 8px 2px #000000;
+       -moz-box-shadow: 0px 0px 8px 2px #000000;
+            box-shadow: 0px 0px 8px 2px #000000;
+}
+
+/*3. 渐变背景动画效果*/
+button {
+    padding: 15px;
+    background-image: linear-gradient(#FC6E51, #FFF);
+    background-size: auto 200%;
+    background-position: 0 100%;
+    transition: background-position 0.5s;
+}
+button:hover {
+    background-position: 0 0;
+}
+
+/*4.像出版物一样，第一个字变得大些*/
+p:first-child::first-letter{
+  font-family: "papyrus";
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/*5.创建模糊文本*/
+.blurry-text {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/*6.清除浮动 Clearfix*/
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
+/*7.给可点击元素添加手型光标*/
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+       cursor: pointer;
+}
+
+
+/*8.CSS3媒体查询*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+
+/*9. 重置加载*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+ol, ul {
+    list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+
+
+/*10.居中未知宽度的DIV元素*/
+.content {
+    margin: 0 auto 8px;
+    display: table;
+    }
+
+.content div {
+    display: table-cell;
+    }
+
+<!--[if IE]>
+.content {
+    display: block;
+    text-align: center;
+    }
+.content div {
+    display: inline;
+    zoom: 1;
+}
+<![endif]-->
+
+
+/*11.根据文件类型设置样式*/
+/* external links */
+a[href^="http://"]
+{
+padding-right: 13px;
+background: url(external.gif) no-repeat center right;
+}
+
+/* emails */
+a[href^="mailto:"]
+{
+padding-right: 20px;
+background: url(email.png) no-repeat center right;
+}
+
+/* pdfs */
+a[href$=".pdf"]
+{
+padding-right: 18px;
+background: url(acrobat.png) no-repeat center right;
+}
+
+
+/*12.更改选中文本的样式*/
+::selection
+{
+color: white;
+background-color: red;
+}
+
+::-moz-selection  /* Firefox needs an extra attention for this */
+{
+color: white;
+background-color: red;
+}
+
+/*13.首字下沉*/
+p:first-letter{
+        display:block;
+        margin:5px 0 0 5px;
+        float:left;
+        color:#FF3366;
+        font-size:60px;
+        font-family:Georgia;
+}
+
+
+
